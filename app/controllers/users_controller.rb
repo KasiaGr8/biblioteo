@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   
+  skip_before_action :authorize_user #zeby w ogole mozna bylo sie zarejestrowac
+
   def show
     @user = User.find(params[:id])
   end
@@ -11,13 +13,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to Biblioteo!"
-      redirect_to @user
+      redirect_to profile_path, notice: "Welcome to Biblioteo!"
     else
-      render 'new'
+      render :new
     end
   end
-
 end
 
 private
