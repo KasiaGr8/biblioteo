@@ -11,8 +11,10 @@ class ApplicationController < ActionController::Base
     if current_user.blank?
       redirect_to new_session_path, alert: 'Please log in first!'
     end
-    # ... jeżeli jestem zalogowana to do jakich routesów mam mieć dostęp, 
-    # a jeśli nie zalogowana, to przenieść na sign in lub sign up, 
-    # nie wiadomo ile metod, może trzeba użyć skip before action
-  end
+  end  
+
 end
+ # ... jeżeli jestem zalogowana to do jakich routesów mam mieć dostęp, 
+ # a jeśli nie zalogowana, to przenieść na sign in lub sign up, 
+ # nie wiadomo ile metod, może trzeba użyć skip before action
+  
