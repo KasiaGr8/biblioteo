@@ -81,6 +81,24 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.default_url_options = {
+  #   host: 'pplk-frontend.herokuapp.com',
+  #   protocol: 'http://',
+  # }
+  # config.action_mailer.asset_host = 'http://pplk-frontend.herokuapp.com'
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.sendgrid.net',
+  #   port: 587,
+  #   authentication: :plain,
+  #   user_name: ENV['SENDGRID_USERNAME'],
+  #   password: ENV['SENDGRID_PASSWORD'],
+  #   domain: 'pplk-frontend.herokuapp.com',
+  #   enable_starttls_auto: true,
+  # }
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
