@@ -3,7 +3,9 @@ class UsersController < ApplicationController
   skip_before_action :authorize_user #zeby w ogole mozna bylo sie zarejestrowac
 
   def show
-    @user = User.find(params[:id])
+  end
+
+  def edit
   end
 
   def new
@@ -23,6 +25,6 @@ end
 private
 
 def user_params
-  params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  params.permit(:name, :email, :password, :password_confirmation)
 end
 
