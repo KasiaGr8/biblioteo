@@ -1,0 +1,10 @@
+<h2>Edit</h2>
+
+<%= form_tag profile_path, method: :put, multipart: true do %>
+  <p>
+    <label> My avatar </label>
+    <%= file_field_tag 'avatar' %>
+  </p>
+  <p><%= submit_tag %></p>
+<% end %>
+
