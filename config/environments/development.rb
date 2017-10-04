@@ -42,10 +42,27 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = {host: 'localhost', port: 3000}
-  config.action_mailer.smtp_settings = {address: 'mailcatcher', port: 1025}
+  if ENV['SENDGRID_DEVELOPMENT'] == 'true'
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.default_url_options = {
+      host: 'https://rocky-escarpment-82834.herokuapp.com',
+      protocol: 'http://',
+    }  
+    config.action_mailer.smtp_settings = {
+      address: 'smtp.sendgrid.net',
+      port: 587,
+      authentication: :plain,
+      user_name: ENV['SENDGRID_USERNAME'],
+      password: ENV['SENDGRID_PASSWORD'],
+      domain: 'https://rocky-escarpment-82834.herokuapp.com',
+      enable_starttls_auto: true,
+    }    
+  else
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.default_url_options = {host: 'localhost', port: 3000}
+    config.action_mailer.smtp_settings = {address: 'mailcatcher', port: 1025}
+  end
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
