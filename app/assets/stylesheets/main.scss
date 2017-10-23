@@ -1,0 +1,23 @@
+body {
+  margin: 0
+}
+
+.navbar {
+  background-color: black;
+  height: 50px;
+  color: white;
+  ul {
+    margin: 0;
+    padding: 15px;    
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+      padding-right: 15px;
+
+      a {
+        color: white;
+      }
+    }
+  }
+}
