@@ -1,0 +1,13 @@
+<div class='navbar'>
+  <% if current_user.present? %>
+    <ul>
+      <li><p> Signed in as <%=current_user.email%> </p></li>
+      <li><%= link_to 'Sign out', new_session_path(current_user), method: :delete %></li>
+    </ul>
+    <% else %>
+    <ul>
+      <li><%= link_to 'Sign in', new_session_path %></li>
+      <li><%= link_to 'Sign up', new_user_path %></li>
+    </ul>
+  <% end %>
+</div>

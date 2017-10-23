@@ -9,19 +9,10 @@
   </head>
 
   <body>
-    <!-- TODO: move this navbar to the partial -->
-    <div class='navbar'>
-      <ul>
-        <li><%= link_to 'Home', '#' %></li>
-        <li><%= link_to 'Home', '#' %></li>
-        <li><%= link_to 'Home', '#' %></li>
-      </ul>
-    </div>
-    <!--  -->
+    <%= render partial: './shared/navbar' %>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
     <%= yield %>
-     <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-
   </body>
 </html>
