@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/petergebala/sms_api.git
+  revision: bb28aedd0b184667f46c3e6740aa3cf0d97ddcb3
+  specs:
+    sms_api (0.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -207,6 +213,7 @@ DEPENDENCIES
   rails (~> 5.0.3)
   sass-rails (~> 5.0)
   sendgrid-ruby
+  sms_api!
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

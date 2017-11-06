@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resource :sessions, only: [:destroy]
   resources :users, only: [:new, :create]
   resource :profile, only: [:show, :edit, :update] # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :sms_confirmations, only: [:new, :create]
 end

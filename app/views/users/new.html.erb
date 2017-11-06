@@ -4,16 +4,19 @@
 
   <%= label_tag :name %>
   <%= text_field_tag :name %>
-
+  <br>
   <%= label_tag :email %>
   <%= email_field_tag :email %>
-
+  <br>
   <%= label_tag :password %>
   <%= password_field_tag :password %>
-
+  <br>
   <%= label_tag :password_confirmation, "Confirmation" %>
   <%= password_field_tag :password_confirmation %>
-
+  <br>
+  <%= label_tag :phone, "Phone" %>
+  <%= text_field_tag :phone %>
+  <br>
   <%= submit_tag %>
 <% end %>
 

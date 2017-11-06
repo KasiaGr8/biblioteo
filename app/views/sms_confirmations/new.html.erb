@@ -1,0 +1,7 @@
+<h1> Wpisz kod sms </h1>
+<%= form_tag sms_confirmations_path do %>
+  <%= label_tag :token, 'Sms token:' %>
+  <%= text_field_tag :token %>
+  <%= submit_tag 'Confirm' %>
+<% end %>
+ 
